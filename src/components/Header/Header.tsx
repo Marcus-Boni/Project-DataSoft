@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { Avatar } from '@mui/material';
+import { Avatar, useMediaQuery } from '@mui/material';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useUserMenu } from './hooks';
 import { ThemeToggleButton } from '../ThemeToggleButton';
@@ -26,6 +26,7 @@ export const Header = (props: HeaderProps) => {
   const userProfileName = session?.user?.name as string;
   const userProfileImg = session?.user?.image as string;
   const pages = ['Products', 'Pricing', 'Blog'];
+  const tabletCheck = useMediaQuery('(min-width:768px)');
 
   const {
     anchorElNav,
@@ -112,7 +113,7 @@ export const Header = (props: HeaderProps) => {
               textDecoration: 'none'
             }}
           >
-            LOGO
+            DataSoft
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -125,7 +126,7 @@ export const Header = (props: HeaderProps) => {
               </Button>
             ))}
           </Box>
-          {session && (
+          {session && tabletCheck && (
             <Box sx={{ paddingRight: 5 }}>
               <Typography>
                 Signed in as {session?.user?.email} <br />
@@ -155,11 +156,6 @@ export const Header = (props: HeaderProps) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {/* <MenuItem onClick={() => (session ? signOut() : signIn())}>
-                <Typography textAlign="center">
-                  {session ? 'Logout' : 'Login'}
-                </Typography>
-              </MenuItem> */}
               {session && (
                 <MenuItem onClick={() => signOut()}>
                   <Typography textAlign="center">Logout</Typography>

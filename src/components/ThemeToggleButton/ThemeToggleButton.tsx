@@ -8,7 +8,7 @@ export type ThemeToggleButtonProps = {
 };
 
 export const ThemeToggleButton = (props: ThemeToggleButtonProps) => {
-  const mobileCheck = useMediaQuery('(max-width:500px)');
+  const mobileCheck = useMediaQuery('(min-width:500px)');
   const colorMode = useColorModeCtx();
   const theme = useTheme();
 

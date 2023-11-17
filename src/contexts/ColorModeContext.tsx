@@ -25,7 +25,7 @@ export const ColorModeProvider = ({
       createTheme({
         ...darkTheme
       }),
-    [mode]
+    []
   );
 
   const lightThemeChosen = useMemo(
@@ -33,7 +33,7 @@ export const ColorModeProvider = ({
       createTheme({
         ...lightTheme
       }),
-    [mode]
+    []
   );
 
   return (

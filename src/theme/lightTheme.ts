@@ -8,6 +8,9 @@ export const lightTheme: ThemeOptions = {
     },
     secondary: {
       main: '#ff8400'
+    },
+    background: {
+      default: 'rgba(255, 255, 255, 0.7)'
     }
   }
 };
