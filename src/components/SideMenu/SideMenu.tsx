@@ -1,9 +1,11 @@
 export const SideMenu = () => {
   return (
     <ul>
-      <li>Analytics</li>
-      <li>Settings</li>
-      <li>Profile</li>
+      After all that, prepare to be amazed by the following:
+      <li>✨</li>
+      <li>✨</li>
+      <li>✨</li>
+      <li>✨</li>
     </ul>
   );
 };
