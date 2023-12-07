@@ -53,3 +53,4 @@ You can start editing the page by modifying `app/_app.tsx`. The page auto-update
 
 <hr/>
 <p>Made with ❤ by Marcus-Boni & inspired by Curious Byte channel</p>
+
